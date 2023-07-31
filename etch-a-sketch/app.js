@@ -176,17 +176,3 @@ function clearGrid() {
     div.classList.remove('hovered');
   });
 }
-
-// function isOptionsClicked(e) {
-//   const clickedButton = e.target;
-
-//   gridOptionEl.forEach((btn) => {
-//     if (clickedButton.textContent === 'Draw') {
-//       btn.style.add('hovered-btn');
-//     } else if (clickedButton.textContent === 'Rainbow') {
-//       btn.style.add('hovered-btn');
-//     } else {
-//       btn.style.add('hovered-btn');
-//     }
-//   });
-// }
