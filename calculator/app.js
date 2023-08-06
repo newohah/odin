@@ -110,4 +110,5 @@ function clearDisplay() {
 /*
 No delete button
 No continuous computation 
+no keyboard support
 */
