@@ -8,8 +8,8 @@ const totalEl = document.querySelector('.total');
 const calcBtns = document.querySelectorAll('.btn');
 
 let operator = '';
-let firstNum = '';
-let secondNum = '';
+let firstNumber = '';
+let secondNumber = '';
 
 calcBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -92,10 +92,10 @@ function calculateResult() {
   operator = expression.match(operatorRegex)[0];
 
   const numbers = expression.split(operator);
-  firstNum = numbers[0].trim();
-  secondNum = numbers[1].trim();
+  firstNumber = numbers[0].trim();
+  secondNumber = numbers[1].trim();
 
-  const result = operate(Number(firstNum), Number(secondNum), operator);
+  const result = operate(Number(firstNumber), Number(secondNumber), operator);
 
   displayCurrentOpeEl.textContent = result;
 }
@@ -103,6 +103,11 @@ function calculateResult() {
 function clearDisplay() {
   displayCurrentOpeEl.textContent = 0;
   operator = '';
-  firstNum = '';
-  secondNum = '';
+  firstNumber = '';
+  secondNumber = '';
 }
+
+/*
+No delete button
+No continuous computation 
+*/
