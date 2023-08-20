@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "norse-bold";
+  src: url(/assets/fonts/Norse-Bold.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+}
+
+#background-img {
+  position: absolute;
+  width: 550px;
+  height: 1000px;
+}
+
+#header-logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  background-color: rgb(0, 0, 0, 0.6);
+  width: 550px;
+  padding: 10px;
+
+  position: absolute;
+  top: 200px;
+}
+
+#header-logo h1 {
+  color: white;
+  font-family: "norse-bold", sans-serif;
+  font-size: 5.5rem;
+  margin-left: 10px;
+}
+
+#logo {
+  width: 100px;
+  height: 150px;
+  margin-left: 110px;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  top: 950px;
+  left: 150px;
+}
+
+footer a {
+  color: inherit;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+
+  position: absolute;
+  top: 0;
+  left: 550px;
+  width: calc(100% - 550px);
+  /* height: 100%; */
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+#page-description {
+  position: relative;
+  margin-top: 150px;
+  margin-left: 50px;
+  font-size: 24px;
+}
+
+.p1 {
+  white-space: pre-line;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.p2 {
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+#sign-up-form {
+  margin-top: 100px;
+  height: 330px;
+
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.user_name,
+.contacts,
+.password{
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 100px;
+  align-items: center;
+  margin: 25px 0 25px 50px;
+}
+
+legend{
+  /* font-weight: bold; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  margin: 25px 0px 0px 50px;
+}
+
+.input-group label {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.input-group input {
+  width: 250px;
+  height: 30px;
+  padding: 0 5px;
+  border: 1px solid #E5E7EB;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#signup{
+  margin: 50px 50px 30px;
+  width: 250px;
+  height: 50px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #596D48;
+  color: white;
+  font-size: 20px;
+}
+
+#signup:hover{
+  background-color: #475936;
+}
+
+.login {
+  margin: 0 50px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login a {
+  text-decoration: none;
+  color: #596D48;
+}
+
+.login a:hover {
+  color: #475936;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
