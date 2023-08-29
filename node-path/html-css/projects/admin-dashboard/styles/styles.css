@@ -66,6 +66,7 @@
 
 .notification-logo{
     width: 25px;
+    filter: invert(1);
 }
 
 .display-picture {
