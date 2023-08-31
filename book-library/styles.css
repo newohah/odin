@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 300px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.settings {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.toggle-dark-mode{
+    content: url(/assets/img/toggle-switch-off.svg);
+    width: 40px;
+}
+
+#login-btn {
+    width: 80px;
+    height: 40px;
+    padding: 0.225em;
+    border: none;
+    border-radius: 15px;
+}
