@@ -1,3 +1,10 @@
+const getTitleInputEl = document.querySelector('#title')
+const getAuthorInputEl = document.querySelector('#author')
+const getPagesInputEl = document.querySelector('#pages')
+const getStatusEl = document.querySelector('#read')
+const submitBtn = document.querySelector('#submit')
+
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -7,12 +14,3 @@ function Book(title, author, pages, read) {
         return `${title}, ${author}, ${pages}, ${read}`
     }
 }
-
-const book1 = new Book('The Hobbit', 'by J.R.R. Tolkien', '295 pages', 'not read yet')
-console.log(book1.info())
-
-const book2 = new Book('Harry Potter', 'by J.K. Rowling', '309 pages', 'not read yet')
-console.log(book2.info())
-
-console.log(Object.getPrototypeOf(book1) === Book.prototype)
-console.log(Object.getPrototypeOf(book2) === Book.prototype)
