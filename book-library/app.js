@@ -7,7 +7,6 @@ const getPagesInputEl = document.querySelector('#pages')
 const getStatusEl = document.querySelector('#read')
 const submitBtn = document.querySelector('#submit')
 const bookContainer = document.querySelector('.book-body')
-let deleteBookCardEl = ''
 
 
 addBook.addEventListener('click', e => {
@@ -40,6 +39,7 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(e){
     if (e) {
+        e.preventDefault()
         myLibrary.push(new Book(getTitleInputEl.value, getAuthorInputEl.value, getPagesInputEl.value, getStatusEl.checked))
         counter++
 
@@ -62,10 +62,6 @@ function addBookToLibrary(e){
             bookTitleInfo.innerText = myLibrary[i].title
             bookAuthorInfo.innerText = myLibrary[i].author
             bookPagesInfo.innerText = myLibrary[i].pages
-            
-            bookCard.append(bookTitleInfo)
-            bookCard.append(bookAuthorInfo)
-            bookCard.append(bookPagesInfo)
         }
 
         // code to check if the checkbox is checked or not
@@ -77,9 +73,12 @@ function addBookToLibrary(e){
             bookStatusInfo.style.backgroundColor = '#f73b3b'
         }
 
+        bookCard.append(bookTitleInfo)
+        bookCard.append(bookAuthorInfo)
+        bookCard.append(bookPagesInfo)
         bookCard.append(bookStatusInfo)
 
-        deleteBookCardEl = document.createElement('button');
+        const deleteBookCardEl = document.createElement('button');
         deleteBookCardEl.classList.add('delete-btn')
         deleteBookCardEl.type = 'reset';
         deleteBookCardEl.innerText = 'Delete'
@@ -88,9 +87,18 @@ function addBookToLibrary(e){
         bookContainer.appendChild(bookCard)
     }
 
-    deleteBookCardEl.addEventListener('click', e => {
-        console.log('delete button is clicked')
-    })
+    const closeCard = document.querySelectorAll('.delete-btn')
+    console.log(closeCard.length)
+
+    for (let i = 0; i < closeCard.length; i++){
+        closeCard[i].addEventListener('click', () => {
+            closeCard[i].parentElement.style.opacity = 0;
+            setTimeout(() => {
+                closeCard[i].parentElement.style.display = 'none'
+                closeCard[i].parentElement.remove()
+            }, 100)
+        })
+    }
 }
 
 // Close the popup form

@@ -56,6 +56,7 @@ body{
     padding: 20px;
     background-color: #477acc;
     color: #eee;
+    transition: 0.5 linear;
 }
 
 .book-info {
