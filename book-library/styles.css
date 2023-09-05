@@ -60,7 +60,8 @@ body{
     justify-items: center;
     gap: 20px;
     padding: 20px;
-    background-color: #477acc;
+    background: rgb(130,169,255);
+    background: linear-gradient(90deg, rgba(130,169,255,1) 25%, rgba(31,149,201,1) 76%);
     color: #eee;
     transition: 0.5 linear;
 }
@@ -111,7 +112,8 @@ body{
     transform: translate(-30% -40%) scale(1.25);
     width: 380px;
     padding: 20px 30px;
-    background: #477acc;
+    background: rgb(130,169,255);
+    background: linear-gradient(90deg, rgba(130,169,255,1) 25%, rgba(31,149,201,1) 76%);
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     transition: top 0ms ease-in-out 200ms,
@@ -134,10 +136,11 @@ body{
     right: 10px;
     width: 15px;
     height: 15px;
-    background: #477acc;
+    background: rgba(31,149,201,1);
     color: #eee;
     text-align: center;
     list-style: 15px;
+    font-weight: 900;
     cursor: pointer;
 }
 
