@@ -1,11 +1,7 @@
-/*
-
-
-*/
-
 const displayCurrentOpeEl = document.querySelector('.display');
 const totalEl = document.querySelector('.total');
 const calcBtns = document.querySelectorAll('.btn');
+const operatorBtnEl = document.querySelectorAll('.operator')
 
 let operator = '';
 let firstNumber = '';
@@ -20,9 +16,11 @@ calcBtns.forEach((btn) => {
       buttonValue === 'C'
     ) {
       if (buttonValue === '=') {
-        calculateResult();
+        displayCurrentOpeEl.innerText === '0' ? displayCurrentOpeEl.textContent = '=' : calculateResult();
       } else if (buttonValue === 'C') {
         clearDisplay();
+      } else if (buttonValue === 'Delete') {
+        deleteCalculation();
       }
     } else if (buttonValue === '.') {
       if (displayCurrentOpeEl.textContent.includes('.')) {
@@ -36,43 +34,32 @@ calcBtns.forEach((btn) => {
   });
 });
 
-function add(a, b) {
-  let operation = a + b;
-  return operation;
-}
+function calculator(firstNumber, secondNumber, operator){
+  const add = (a, b) => a + b;
+  const subtract = (a, b) => a - b;
+  const multiply = (a, b) => a * b;
+  const divide = (a, b) => a / b;
 
-function subtract(a, b) {
-  let operation = a - b;
-  return operation;
-}
+  const operate = () => {
+    const toAdd = add(firstNumber, secondNumber);
+    const toSubtract = subtract(firstNumber, secondNumber);
+    const toMultiply = multiply(firstNumber, secondNumber);
+    const toDivide = divide(firstNumber, secondNumber);
 
-function multiply(a, b) {
-  let operation = a * b;
-  return operation;
-}
-
-function divide(a, b) {
-  let operation = a / b;
-  return operation;
-}
-
-function operate(a, b, ope) {
-  const toAdd = add(a, b);
-  const toSubtract = subtract(a, b);
-  const toMultiply = multiply(a, b);
-  const toDivide = divide(a, b);
-
-  if (ope === '+') {
-    return toAdd;
-  } else if (ope === '-') {
-    return toSubtract;
-  } else if (ope === '×') {
-    return toMultiply;
-  } else if (ope === '÷') {
-    return toDivide;
-  } else {
-    return;
+    if (operator === '+') {
+      return toAdd;
+    } else if (operator === '-') {
+      return toSubtract;
+    } else if (operator === '×') {
+      return toMultiply;
+    } else if (operator === '÷') {
+      return toDivide;
+    } else {
+      return;
+    }
   }
+
+  return {operate}
 }
 
 function showCurrentOperation(buttonValue) {
@@ -95,9 +82,9 @@ function calculateResult() {
   firstNumber = numbers[0].trim();
   secondNumber = numbers[1].trim();
 
-  const result = operate(Number(firstNumber), Number(secondNumber), operator);
+  const result = calculator(Number(firstNumber), Number(secondNumber), operator);
 
-  displayCurrentOpeEl.textContent = result;
+  displayCurrentOpeEl.textContent = result.operate();
 }
 
 function clearDisplay() {
@@ -107,8 +94,12 @@ function clearDisplay() {
   secondNumber = '';
 }
 
+function deleteCalculation() {
+  let onDisplay = displayCurrentOpeEl.innerText.split('')
+  let toDelete = onDisplay.pop()
+  displayCurrentOpeEl.textContent = onDisplay.join('');
+}
+
 /*
-No delete button
-No continuous computation 
 no keyboard support
 */
