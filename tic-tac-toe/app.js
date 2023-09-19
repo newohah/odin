@@ -44,13 +44,9 @@ const GameBoard = (function () {
       const result = _CheckWinner();
 
       if (result === 'X') {
-        playerOneEl.style.backgroundColor = 'green';
-        playerTwoEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
-        resetBtn.style.backgroundColor = 'rgba(54, 49, 48)';
+        _setWinnerElement(playerOneEl, playerTwoEl);
       } else if (result === 'O') {
-        playerTwoEl.style.backgroundColor = 'green';
-        playerOneEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
-        resetBtn.style.backgroundColor = 'rgba(54, 49, 48)';
+        _setWinnerElement(playerTwoEl, playerOneEl);
       } else if (result === 'draw') {
         playerTwoEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
         playerOneEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
@@ -96,6 +92,12 @@ const GameBoard = (function () {
   // Function to check if the game is still ongoing
   function _gameIsOngoing() {
     return !_CheckWinner() && gameBoard.includes('');
+  }
+
+  function _setWinnerElement(winner, loser) {
+    winner.style.backgroundColor = 'green';
+    loser.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
+    resetBtn.style.backgroundColor = 'rgba(54, 49, 48)';
   }
 
   function _resetGame() {
