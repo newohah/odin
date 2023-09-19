@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Poppins&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  background: linear-gradient(
+    35deg,
+    rgba(46, 87, 152, 1) 45%,
+    rgba(63, 129, 189, 1) 70%
+  );
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  font-size: 4rem;
+  background-color: #b5b4b0;
+  box-shadow: 1px 8px 8px 5px rgba(0, 0, 0, 0.75);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.players {
+  display: flex;
+  gap: 5px;
+}
+
+.playerOne,
+.playerTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(54, 49, 48);
+  border-radius: 5px;
+  height: 50px;
+  width: 250px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.playerTwo {
+  background-color: rgba(54, 49, 48, 0.5);
+}
+
+.game-result {
+  font-size: 2.25rem;
+}
+
+.grid-board {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  border: 3px solid rgba(0, 0, 0, 0.5);
+}
+
+.grid-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.5rem;
+  padding: 5px;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.grid-box:hover {
+  background-color: rgba(57, 169, 230, 0.5);
+}
+
+#reset-btn {
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  background: white;
+  background-color: rgba(54, 49, 48, 0.5);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+#reset-btn:hover {
+  background-color: rgba(54, 49, 48);
+}
