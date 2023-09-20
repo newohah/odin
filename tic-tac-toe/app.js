@@ -28,16 +28,13 @@ const GameBoard = (function () {
           playerTwo.turn = true;
           box.textContent = playerOne.mark;
           _makeMove(playerOne.mark, index);
-          resetBtn.style.backgroundColor = 'rgba(54, 49, 48)';
-          playerTwoEl.style.backgroundColor = 'rgba(54, 49, 48)';
-          playerOneEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
+          _setTurnElement(playerTwoEl, playerOneEl);
         } else {
           playerOne.turn = true;
           playerTwo.turn = false;
           box.textContent = playerTwo.mark;
           _makeMove(playerTwo.mark, index);
-          playerOneEl.style.backgroundColor = 'rgba(54, 49, 48)';
-          playerTwoEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
+          _setTurnElement(playerOneEl, playerTwoEl);
         }
       }
 
@@ -100,6 +97,11 @@ const GameBoard = (function () {
     resetBtn.style.backgroundColor = 'rgba(54, 49, 48)';
   }
 
+  function _setTurnElement(turn, noTurn) {
+    turn.style.backgroundColor = 'rgba(54, 49, 48)';
+    noTurn.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
+  }
+
   function _resetGame() {
     boxes.forEach((box) => {
       playerOne.turn = 'true';
@@ -111,4 +113,9 @@ const GameBoard = (function () {
       playerTwoEl.style.backgroundColor = 'rgba(54, 49, 48, 0.5)';
     });
   }
+
+  return {
+    _CheckWinner,
+    _gameIsOngoing,
+  };
 })();
